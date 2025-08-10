@@ -22,11 +22,12 @@ export function RestaurantCard({
       ? "bg-emerald-100 text-emerald-700 border-emerald-200"
       : "bg-rose-100 text-rose-700 border-rose-200"
 
+  const clampedRating = Math.min(Number(item.rating), 5)
   return (
-    <Card
-      className="restaurant-card overflow-hidden transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md"
-      data-testid="restaurant-card"
-    >
+      <Card
+        className="restaurant-card overflow-hidden transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md"
+        data-testid="restaurant-card"
+      >
       <CardHeader className="p-0">
         <div className="relative w-full aspect-[16/10] bg-muted">
           {/* Price tag in top left */}
@@ -49,7 +50,7 @@ export function RestaurantCard({
         <div className="flex items-center gap-3 text-sm">
           <div className="restaurant-rating flex items-center gap-1 text-yellow-500">
             <Star className="w-4 h-4" fill="#FF9A0E" stroke="#FF9A0E" />
-            <span className="font-semibold text-black">{Number(item.rating).toFixed(1)}</span>
+            <span className="font-semibold text-black">{clampedRating.toFixed(1)}</span>
           </div>
         </div>
         <div className="restaurant-status">

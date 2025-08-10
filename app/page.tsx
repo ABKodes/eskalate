@@ -45,7 +45,12 @@ export default function Page() {
     try {
       setLoading(true)
       setError(null)
-      const data = await getFoods(q)
+      let data = await getFoods(q)
+      // Randomly set some items to 'Closed' for demo
+      data = data.map((item, idx) => ({
+        ...item,
+        status: idx % 3 === 0 ? "Closed" : item.status,
+      }))
       setFoods(data)
     } catch (e) {
       setError("Failed to load data. Please try again.")
