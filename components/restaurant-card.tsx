@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { Edit, Trash2, Star } from "lucide-react"
+import { DollarSign } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import type { RestaurantFood } from "@/types/restaurant"
 import { Badge } from "@/components/ui/badge"
@@ -28,6 +29,11 @@ export function RestaurantCard({
     >
       <CardHeader className="p-0">
         <div className="relative w-full aspect-[16/10] bg-muted">
+          {/* Price tag in top left */}
+          <div className="absolute top-2 left-2 z-10 bg-[#FF9A0E] text-white rounded-lg px-3 py-1 text-xs font-semibold flex items-center gap-1 shadow">
+            <DollarSign className="w-4 h-4" />
+            <span>{typeof item.price === "number" ? `$${item.price.toFixed(2)}` : "N/A"}</span>
+          </div>
           <Image
             src={item.image || "/placeholder.svg?height=240&width=384&query=restaurant%20food%20image"}
             alt={item.name ? `${item.name} image` : "Restaurant food image"}
