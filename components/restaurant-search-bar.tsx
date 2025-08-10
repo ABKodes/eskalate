@@ -18,22 +18,9 @@ export function RestaurantSearchBar({
   onChange: (v: string) => void
   onClear?: () => void
 }) {
-  const [foodImage, setFoodImage] = useState<string>("")
+    const foodImage = "https://img.freepik.com/free-psd/roasted-chicken-dinner-platter-delicious-feast_632498-25445.jpg?semt=ais_hybrid&w=740&q=80"
   const [tab, setTab] = useState<'delivery' | 'pickup'>('delivery')
 
-  useEffect(() => {
-    async function fetchFoodImage() {
-      try {
-        const foods = await getFoods()
-        if (foods.length > 0 && foods[0].image) {
-          setFoodImage(foods[0].image)
-        }
-      } catch (e) {
-        setFoodImage("")
-      }
-    }
-    fetchFoodImage()
-  }, [])
 
   return (
     <section

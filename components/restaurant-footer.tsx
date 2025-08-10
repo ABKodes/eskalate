@@ -5,7 +5,7 @@ import { Instagram, Facebook, Twitter } from "lucide-react";
 export function RestaurantFooter() {
   return (
     <footer className="restaurant-footer mt-8 bg-[#18181b] text-white">
-      <div className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-between gap-8 md:gap-x-20 items-start">
+  <div className="container mx-auto px-8 py-10 flex flex-col md:flex-row justify-between gap-8 md:gap-x-20 items-start">
         {/* Left flex: Company, Contact, Legal */}
   <div className="flex flex-col sm:flex-row justify-between gap-8 w-full md:w-auto">
           <div>

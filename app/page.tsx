@@ -162,8 +162,8 @@ export default function Page() {
 
   return (
     <div className="restaurant-app min-h-dvh flex flex-col">
-      <header className="restaurant-header sticky top-0 z-10 bg-background/70 backdrop-blur border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center gap-3">
+      <header className="restaurant-header sticky top-0 z-10 bg-background/70 backdrop-blur border-b px-8 py-4">
+        <div className="container mx-auto flex items-center gap-3">
           <div className="flex-1">
             <h1 className="text-xl sm:text-2xl font-semibold">Food Wagen</h1>
             <p className="text-sm text-muted-foreground">Manage your restaurant foods</p>
@@ -206,7 +206,7 @@ export default function Page() {
           ) : (
             <div
               className={[
-                "grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6",
+                "grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 px-2 md:px-8 lg:px-16",
                 "transition-opacity transition-transform duration-300",
                 entryAnimated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
               ].join(" ")}
