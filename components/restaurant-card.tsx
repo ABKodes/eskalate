@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Edit, Trash2 } from "lucide-react"
+import { Edit, Trash2, Star } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import type { RestaurantFood } from "@/types/restaurant"
 import { Badge } from "@/components/ui/badge"
@@ -41,9 +41,9 @@ export function RestaurantCard({
       <CardContent className="p-4 space-y-2">
         <div className="restaurant-name font-semibold text-base leading-tight">{item.name}</div>
         <div className="flex items-center gap-3 text-sm">
-          <div className="restaurant-rating">Rating: {Number(item.rating).toFixed(1)}</div>
-          <div className="restaurant-price text-muted-foreground">
-            {typeof item.price === "number" ? `Price: $${item.price.toFixed(2)}` : "Price: N/A"}
+          <div className="restaurant-rating flex items-center gap-1 text-yellow-500">
+            <Star className="w-4 h-4" fill="#FF9A0E" stroke="#FF9A0E" />
+            <span className="font-semibold text-black">{Number(item.rating).toFixed(1)}</span>
           </div>
         </div>
         <div className="restaurant-status">
